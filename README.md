@@ -14,28 +14,29 @@ The data provided the ballot ID, the county in which the voter lives, and candid
 - The first goal of the audit was to determine which candidate had the most votes.
 - This included:
   * determining the total number of votes.
-  * 
+  * determining a list of candidates that received votes.
+  * determining the total number of votes for each candidate.
+  * determining the percentage of votes for each candidate.
+  * determining the winner of the election based on the popular vote.
 
-### All Stocks
-- The code was then extended to all of the stocks. A text input was added to determine which year to run the analysis on.
+### Python Code
+#### Advantages
+- The great thing about python code is that it reads the votes from a csv file, so this code would work and calculate the winner of any election as long as the csv file is set up as ballot ID, county (or this could be by state), and then the candidate voted for.
+- The other great thing is that python can write to files, so it conviently creates a file that can be easily understood and shared.
 
-#### Analysis of 2017 and 2018 Stocks
-- After applying the code for the 2017 and 2018 stocks, the following tables were produced.
-  * From these tables we can see that during 2017 all of the stocks had a positive return, except for TERP.
-  * However, 2018 had very different results. All of the stocks had a negative return except ENPH and RUN.
+#### Counting Votes
+- A for loop was used to create:
+  * the total count.
+  * the list of candidates that received votes.
+  * the total number of votes for each candidate.
+- A second for loop was used to determine the percentage of votes for each candidate and print out the number and percentage of votes for each candidate
 
-<p align="center"><img src="https://github.com/M-Outlaw/BootCamp-Mod-2-Stock-Analysis/blob/main/Resources/Stocks_2017.png" width="342" height="344"/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<img src="https://github.com/M-Outlaw/BootCamp-Mod-2-Stock-Analysis/blob/main/Resources/Stocks_2018.png" width="342" height="344"/></p>
+#### Counting Counties
 
-### VBA Efficiency
-- The original code was performed and timed for both 2017 and 2018. Their runtimes are shown below.
 
-<p align="center"><img src="https://github.com/M-Outlaw/BootCamp-Mod-2-Stock-Analysis/blob/main/Resources/Runtime_Before_Refactoring_2017_.png" width="371" height="127"/>&nbsp;<img src="https://github.com/M-Outlaw/BootCamp-Mod-2-Stock-Analysis/blob/main/Resources/Runtime_Before_Refactoring_2018.png" width="371" height="127"/></p>
+<p align="center"><img src="https://github.com/M-Outlaw/BootCamp-Mod-3-Election-analysis/blob/main/Resources/PyPoll_Challenge_Terminal_Output.png" width="800" height="496"/></p>
 
-- The code was then refactored to validate the results and produce a more efficient analysis. 
-  * Arrays were intialized to hold all of the stock total daily volumes, starting values, and ending values. This allowed the code to run faster because all of the analysis of the data spreadsheet was able to take place at once and then switch to the results spreadsheet instead of having to switch back and forth among the sheets. 
-  * The graphics below show the more efficient runtimes.
-
-<p align="center"><img src="https://github.com/M-Outlaw/BootCamp-Mod-2-Stock-Analysis/blob/main/Resources/Runtime_After_Refactoring_2017.png" width="371" height="127"/>&nbsp;<img src="https://github.com/M-Outlaw/BootCamp-Mod-2-Stock-Analysis/blob/main/Resources/Runtime_After_Refactoring_2018.png" width="371" height="127"/></p>
+<img src="https://github.com/M-Outlaw/BootCamp-Mod-2-Stock-Analysis/blob/main/Resources/Stocks_2017.png" width="342" height="344"/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<img src="https://github.com/M-Outlaw/BootCamp-Mod-2-Stock-Analysis/blob/main/Resources/Stocks_2018.png" width="342" height="344"/></p>
 
 ### Challenges and Difficulties Encountered
 - In refactoring the code, initially it would not run because I continued to receive an overflow error for the return values. I was confused by this and tried to use the CLng() function to help with this, however the error continued.
