@@ -82,4 +82,3 @@ The generated text file can be viewed [here](https://github.com/M-Outlaw/BootCam
   * On line 48, change "candidate_name = row[2]" to "candidate_name = row[column index of the candidates]".
   * On line 51, change "county_name = row[1]" to "county_name = row[column index of the candidates]".
 - A third way to alter the code to audit a national election is to do a find and replace and change all instances of county to state.
-![image](https://user-images.githubusercontent.com/89364082/134795258-dfe70d6e-f53a-477f-9c78-d208039691b4.png)
